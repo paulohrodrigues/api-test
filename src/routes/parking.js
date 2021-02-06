@@ -1,25 +1,25 @@
-import {createParkingController, outParkingController, payParkingController, historicParkingPerPlateController} from "../controllers";
+import {createReservationController, outReservationController, payReservationController, historicReservationPerPlateController} from "../controllers";
 
 const parking = [
     {
         method: 'post',
         path  : '/parking',
-        route : createParkingController
+        route : createReservationController
     },
     {
         method: 'put',
         path  : '/parking/:id/out',
-        route : outParkingController
+        route : outReservationController
     },
     {
         method: 'put',
         path  : '/parking/:id/pay',
-        route : payParkingController
+        route : payReservationController
     },
     {
         method: 'get',
         path  : '/parking/:plate',
-        route : historicParkingPerPlateController
+        route : historicReservationPerPlateController
     }
 ];
 

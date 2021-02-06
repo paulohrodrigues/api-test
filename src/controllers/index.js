@@ -1,10 +1,8 @@
-import {userLoginController} from "./user";
-import {createParkingController, historicParkingPerPlateController, outParkingController, payParkingController} from "./parking";
+import {createReservationController, historicReservationPerPlateController, outReservationController, payReservationController} from "./reservation";
 
 export {
-    userLoginController,
-    createParkingController,
-    historicParkingPerPlateController,
-    outParkingController,
-    payParkingController
+    createReservationController,
+    historicReservationPerPlateController,
+    outReservationController,
+    payReservationController
 }

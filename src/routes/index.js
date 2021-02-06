@@ -1,5 +1,5 @@
-import userRoute from "./user";
+import parkingRoute from "./parking";
 
 export default [
-    ...userRoute
+    ...parkingRoute
 ];
