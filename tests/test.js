@@ -10,7 +10,7 @@ const app = require("../app/index");
 context('Reservation', async () => {
     var serve, dataToCreate, dataResCreate;
     before( async () =>  {
-        await delay(5000);
+        await delay(10000);
         serve       = await app.app;
         dataToCreate  = {plate: "AAA-"+(Math.floor(Math.random() * (9999 - 1000 + 1) ) + 1000)};
     });
