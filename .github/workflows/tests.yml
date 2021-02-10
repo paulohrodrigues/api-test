@@ -18,7 +18,6 @@ jobs:
         env:
           CI: true
         run: |
-          echo 'export MONGO_URL=mongodb://paulohrabreu:7JPdfLyUEzbzjm9z@cluster0-shard-00-00.tuwd3.gcp.mongodb.net:27017,cluster0-shard-00-01.tuwd3.gcp.mongodb.net:27017,cluster0-shard-00-02.tuwd3.gcp.mongodb.net:27017/' >> $BASH_ENV
-          source $BASH_ENV
+          echo 'export MONGO_URL=mongodb://paulohrabreu:7JPdfLyUEzbzjm9z@cluster0-shard-00-00.tuwd3.gcp.mongodb.net:27017,cluster0-shard-00-01.tuwd3.gcp.mongodb.net:27017,cluster0-shard-00-02.tuwd3.gcp.mongodb.net:27017/' >> .env
           npm ci
           npm test
