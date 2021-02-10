@@ -9,6 +9,11 @@ jobs:
       matrix:
         node-version: [v10.13.0]
     steps:
+      - run:
+        name: Define Environment Variable at Runtime
+        command: |
+          echo 'export MONGO_URL=mongodb://paulohrabreu:7JPdfLyUEzbzjm9z@cluster0-shard-00-00.tuwd3.gcp.mongodb.net:27017,cluster0-shard-00-01.tuwd3.gcp.mongodb.net:27017,cluster0-shard-00-02.tuwd3.gcp.mongodb.net:27017/' >> $BASH_ENV
+          source $BASH_ENV
       - uses: actions/checkout@v1
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
