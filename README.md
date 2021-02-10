@@ -31,7 +31,7 @@ Note: You can just make a copy of `.env.example` and name it as `.env`
 
 ## Documentation
 
-Quick Express comes with [apidoc](https://apidocjs.com). Run `npm run doc` to generate de doc on `/doc` folder.
+API comes with [apidoc](https://apidocjs.com). Run `npm run doc` to generate de doc on `/doc` folder.
 
 Consider consulting the [apidoc documentation](https://apidocjs.com/#getting-started) to learn more.
 
