@@ -1,9 +1,9 @@
 const responseSuccess = (data, res) => {
-    res.json({message: data, code: 200});
+    res.status(data.code).json({message: data.data});
 };
 
 const responseError = (error, res) => {
-    res.json({message: error.message, code: error.code == undefined ? 404 : error.code});
+    res.status( error.code == undefined ? 404 : error.code ).json({message: error.message});
 };
 
 export {

@@ -15,17 +15,18 @@ export default class ReservationLogic extends Logic {
     async createReservation() {
         try {
             const {plate} = this.params;
-
-            if(MaskSingleton.checkMaskPlate(plate)) {
-                throwError("");
+            if(!MaskSingleton.checkMaskPlate(plate)) {
+                throwError("INVALID_PLATE");
             }
             if((await ReservationRepository.findOne({query: {plate, paid: false}}))) {
-                throwError("");
+                throwError("OPEN_RESERVATION");
             }
 
-            return await this.save({
+            const responseSave = await this.save({
                 plate
             });
+
+            return {data:responseSave, code: 200};
         } catch (err) {
             throw err;
         }
@@ -33,16 +34,23 @@ export default class ReservationLogic extends Logic {
     async outReservation() {
         try {
             const {id} = this.params;
-            const resReservation = await ReservationRepository.findOne({
+            const responseReservation = await ReservationRepository.findOne({
                 query: {
-                    _id  : id,
-                    paid: true
+                    _id  : id
                 }
             });
-            if(!resReservation) {
-                throwError("");
+
+            if(!responseReservation) {
+                throwError("RESERVATION_NOT_FOUND");
             }
-            const time = (new Date().getTime() - new Date(resReservation.createdAt).getTime()) / 1000 / 60;
+            if(!responseReservation.paid) {
+                throwError("NOT_PAID");
+            }
+            if(responseReservation.left) {
+                throwError("ALREADY_RELEASED");
+            }
+
+            const time = (new Date().getTime() - new Date(responseReservation.createdAt).getTime()) / 1000 / 60;
             await ReservationRepository.update({
                 query: {
                     _id: id
@@ -52,7 +60,7 @@ export default class ReservationLogic extends Logic {
                     time: `${time} minutes`
                 }
             });
-            return {};
+            return {data: {}, code:200};
         } catch (err) {
             throw err;
         }
@@ -61,16 +69,19 @@ export default class ReservationLogic extends Logic {
         try {
             const {id} = this.params;
 
-            const resReservation = await ReservationRepository.findOne({
+            const responseReservation = await ReservationRepository.findOne({
                 query: {
-                    _id  : id,
-                    left : false,
-                    paid : false
+                    _id  : id
                 }
             });
-            if(!resReservation) {
-                throwError("");
+
+            if(!responseReservation) {
+                throwError("RESERVATION_NOT_FOUND");
             }
+            if(responseReservation.paid) {
+                throwError("ALREADY_PAID");
+            }
+
             await ReservationRepository.update({
                 query: {
                     _id  : id
@@ -80,7 +91,7 @@ export default class ReservationLogic extends Logic {
                 }
             });
 
-            return{};
+            return{data: {}, code: 200};
         } catch (err) {
             throw err;
         }
@@ -88,7 +99,10 @@ export default class ReservationLogic extends Logic {
     async historicReservationPerPlate() {
         try {
             const {plate, offset, size} = this.params;
-            return (await ReservationRepository.findByPlate({plate, offset, size}));
+            return {
+                data: (await ReservationRepository.findByPlate({plate, offset, size})),
+                code: 200
+            };
         } catch (err) {
             throw err;
         }

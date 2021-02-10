@@ -1,6 +1,10 @@
 import { DatabaseSingleton } from "../src/core/mongo";
 
-(async ()=>{
+const app = (async ()=>{
   await DatabaseSingleton.start();
-  require("../src/core/server");
+  return require("../src/core/server");
 })();
+
+export {
+  app
+};

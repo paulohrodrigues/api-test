@@ -7,12 +7,12 @@ const parking = [
         route : createReservationController
     },
     {
-        method: 'put',
+        method: 'patch',
         path  : '/parking/:id/out',
         route : outReservationController
     },
     {
-        method: 'put',
+        method: 'patch',
         path  : '/parking/:id/pay',
         route : payReservationController
     },

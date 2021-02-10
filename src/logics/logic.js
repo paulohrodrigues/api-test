@@ -1,5 +1,3 @@
-import { throwError } from "./utils/error/errorManager";
-
 export default class Logic {
     constructor(params, options){
         this.params     = params;

@@ -1,36 +1,32 @@
 const errors = {
     "UNKNOWN": {
-        "code": 0,
+        "code": 401,
         "message": "Internal Error, Please contact the Customer Service"
     },
-    "ERROR_PARAMS": {
-        "code": 1,
-        "message": "Error in Params"
+    "INVALID_PLATE": {
+        "code": 400,
+        "message": "Invalid Plate"
     },
-    "ERROR_NAME": {
-        "code": 2,
-        "message": "Error in Name"
+    "OPEN_RESERVATION": {
+        "code": 400,
+        "message": "There is already an open reserve for this plate"
     },
-    "ERROR_LOGIN_OR_PASSWORD": {
-        "code": 3,
-        "message": "Error in Login or Password"
+    "NOT_PAID": {
+        "code": 400,
+        "message": "Car can only be released after payment"
     },
-    "TOKEN_INVALID": {
-        "code": 4,
-        "message": "Token Invalid"
+    "ALREADY_PAID": {
+        "code": 400,
+        "message": "This reservation is already paid"
     },
-    "EMAIL_ALREADY_REGISTERED": {
-        "code": 5,
-        "message": "E-mail already registered"
+    "RESERVATION_NOT_FOUND": {
+        "code": 400,
+        "message": "Reservation not found"
     },
-    "EMAIL_NOT_EXISTENT": {
-        "code": 6,
-        "message": "Email does not exist"
-    },
-    "TOKEN_EXPIRED": {
-        "code": 7,
-        "message": "Expired Token"
-    },
+    "ALREADY_RELEASED": {
+        "code": 400,
+        "message": "This reserve is already released"
+    }
 };
 
 export const throwError = (value) => {
