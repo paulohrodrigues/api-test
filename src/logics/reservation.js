@@ -26,7 +26,7 @@ export default class ReservationLogic extends Logic {
                 plate
             });
 
-            return {data:responseSave, code: 200};
+            return {data:{_id: responseSave._id}, code: 201};
         } catch (err) {
             throw err;
         }
@@ -60,7 +60,7 @@ export default class ReservationLogic extends Logic {
                     time: `${time} minutes`
                 }
             });
-            return {data: {}, code:200};
+            return {data: {}, code:204};
         } catch (err) {
             throw err;
         }
@@ -91,7 +91,7 @@ export default class ReservationLogic extends Logic {
                 }
             });
 
-            return{data: {}, code: 200};
+            return{data: {}, code: 204};
         } catch (err) {
             throw err;
         }
