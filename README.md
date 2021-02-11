@@ -7,6 +7,7 @@
 
 Technologies:
 
+- Database ([MongoDB](https://www.mongodb.com)) and [MongoDB Atlas](https://www.mongodb.com/cloud/atlas))
 - ORM ([Mongoose](https://mongoosejs.com))
 - Tests ([Mocha](https://mochajs.org) and [Super Test](https://github.com/visionmedia/supertest))
 - API Documentation ([apidoc](https://apidocjs.com))
