@@ -20,7 +20,7 @@ const errors = {
         "message": "This reservation is already paid"
     },
     "RESERVATION_NOT_FOUND": {
-        "code": 400,
+        "code": 404,
         "message": "Reservation not found"
     },
     "ALREADY_RELEASED": {

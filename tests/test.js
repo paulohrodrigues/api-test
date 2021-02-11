@@ -42,7 +42,7 @@ context('Reservation', async () => {
             id[0] = "1";
             id=id.join('');
             const res = await methods.payReservation(serve, {}, id);
-            expect(res.status).to.equal(400);
+            expect(res.status).to.equal(404);
         }));
         it('Should Reservation Already Paid', mochaAsync(async () => {
             const res = await methods.payReservation(serve, {}, dataResCreate._id);
@@ -59,7 +59,7 @@ context('Reservation', async () => {
             id[0] = "1";
             id=id.join('');
             const res = await methods.outReservation(serve, {}, id);
-            expect(res.status).to.equal(400);
+            expect(res.status).to.equal(404);
         }));
         it('Should Reservation Not Paid', mochaAsync(async () => {
             const resCreate = await methods.createReservation(serve, {plate: "AAA-"+(Math.floor(Math.random() * (9999 - 1000 + 1) ) + 1000)});

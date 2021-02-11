@@ -47,7 +47,7 @@ const createReservationController = async (req, res) => {
  *     }
  *
  * @apiErrorExample Error-Response:
- *     HTTP/1.1 400 Bad Request
+ *     HTTP/1.1 404 Bad Request
  *     {
  *       "message": "Reservation not found"
  *     }
@@ -82,7 +82,7 @@ const outReservationController = async (req, res) => {
  *     }
  *
  * @apiErrorExample Error-Response:
- *     HTTP/1.1 400 Bad Request
+ *     HTTP/1.1 404 Bad Request
  *     {
  *       "message": "Reservation not found"
  *     }
