@@ -1,4 +1,4 @@
-[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)]
+![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
 [![CodeFactor](https://www.codefactor.io/repository/github/paulohrodrigues/api-test/badge)](https://www.codefactor.io/repository/github/paulohrodrigues/api-test)
 [![tests](https://github.com/paulohrodrigues/api-test/workflows/tests/badge.svg?branch=main)](https://github.com/paulohrodrigues/api-test/actions)
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/290d5f444ed90ee441f4)
