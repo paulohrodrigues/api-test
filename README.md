@@ -29,6 +29,8 @@ Note: You can just make a copy of `.env.example` and name it as `.env`
     PATCH /parking/:id/pay - payment
     GET /parking/:plate - Historic
 
+#### [Complete Documentation](https://paulohrodrigues.github.io/api-test)
+
 ## Documentation
 
 API comes with [apidoc](https://apidocjs.com). Run `npm run doc` to generate de doc on `/doc` folder.
