@@ -1,3 +1,7 @@
 {
-    "name": "API TEST - PARKING"
-}
+    "name": "API TEST - PARKING",
+    "version": "0.0.1",
+    "description": "Doc API Basic",
+    "title": "Custom api doc browser",
+    "url" : "https://api-test-mlabs.herokuapp.com/api"
+  }
