@@ -25,6 +25,7 @@ Note: You can just make a copy of `.env.example` and name it as `.env`
 **Is recommended to not commit the `.env` file.**
 
 ### Endpoints:
+Full URL = {host}/api/{endpoint}
 
     POST /parking - Input
     PATCH /parking/:id/out - Out
