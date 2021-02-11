@@ -31,6 +31,11 @@ Note: You can just make a copy of `.env.example` and name it as `.env`
     GET /parking/:plate - Historic
 
 #### [Complete Documentation](https://paulohrodrigues.github.io/api-test)
+
+### Heroku:
+
+It is possible to test the project online, this repository is linked with a heroku app.
+
 #### [Demo Heroku](https://api-test-mlabs.herokuapp.com/api/parking/AAA-9644)
 
 ## Documentation
